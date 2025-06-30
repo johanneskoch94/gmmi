@@ -8,8 +8,10 @@
 read_template <- function() {
   readxl::read_xlsx(path = system.file("gmmi_template_241121.xlsx", package = "gmmi"),
                     sheet = 2,
-                    range = "B1:Y70") |>
-    tidyr::pivot_longer(tidyselect::starts_with("2"), names_to = "year")
+                    range = "B1:Y70",
+                    .name_repair = "unique_quiet",
+                    progress = FALSE) |>
+    tidyr::pivot_longer(tidyselect::matches("2\\d\\d\\d"), names_to = "Year")
 }
 
 #' Get template variable

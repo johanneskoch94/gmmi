@@ -12,6 +12,7 @@ Data Handling for the GMMI Project.
 Useful links:
 \itemize{
   \item \url{https://github.com/johanneskoch94/gmmi}
+  \item \url{https://johanneskoch94.github.io/gmmi/}
   \item Report bugs at \url{https://github.com/johanneskoch94/gmmi/issues}
 }
 
