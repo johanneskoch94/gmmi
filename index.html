@@ -70,17 +70,17 @@
 <span></span>
 <span><span class="co"># Load data from a GMMI submission</span></span>
 <span><span class="va">file</span> <span class="op">&lt;-</span> <span class="st">"path_to_file.xlsx"</span></span>
-<span><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu">read_submission</span><span class="op">(</span><span class="va">file</span><span class="op">)</span></span>
+<span><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/read_submission.html">read_submission</a></span><span class="op">(</span><span class="va">file</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Get some information on that submission</span></span>
-<span><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu">read_submission</span><span class="op">(</span><span class="va">file</span>, verbose <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/read_submission.html">read_submission</a></span><span class="op">(</span><span class="va">file</span>, verbose <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Redirect the log to a file calles "read_submission.log"</span></span>
-<span><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu">read_submission</span><span class="op">(</span><span class="va">file</span>, verbose <span class="op">=</span> <span class="cn">TRUE</span>, save_log <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/read_submission.html">read_submission</a></span><span class="op">(</span><span class="va">file</span>, verbose <span class="op">=</span> <span class="cn">TRUE</span>, save_log <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># All of the above work with a vector of files</span></span>
 <span><span class="va">files</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"path_to_file1.xlsx"</span>, <span class="st">"path_to_file2.xlsx"</span><span class="op">)</span></span>
-<span><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu">read_submission</span><span class="op">(</span><span class="va">files</span><span class="op">)</span></span>
+<span><span class="va">data</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/read_submission.html">read_submission</a></span><span class="op">(</span><span class="va">files</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># Simple plots</span></span>
 <span><span class="fu"><a href="reference/plot_over_time.html">plot_carbon_prive_over_emi</a></span><span class="op">(</span><span class="va">data</span><span class="op">)</span></span>
