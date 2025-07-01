@@ -21,3 +21,38 @@ or
 # install.packages("remotes")
 remotes::install_github("johanneskoch94/gmmi")
 ```
+
+## Examples
+
+``` r
+library(gmmi)
+
+# Load data from a GMMI submission
+file <- "path_to_file.xlsx"
+data <- read_submission(file)
+
+# Get some information on that submission
+data <- read_submission(file, verbose = TRUE)
+
+# Redirect the log to a file calles "read_submission.log"
+data <- read_submission(file, verbose = TRUE, save_log = TRUE)
+
+# All of the above work with a vector of files
+files <- c("path_to_file1.xlsx", "path_to_file2.xlsx")
+data <- read_submission(files)
+
+# Simple plots
+plot_carbon_prive_over_emi(data)
+plot_diff_over_emi(data, variable = "GDP")
+plot_over_time(data, variable = "Labor Force|Employment|Industry")
+```
+
+The template file is shipped with the package.
+
+``` r
+# Get information on the template
+template <- read_template()
+template_scenarios <- get_template_scenarios()
+template_variables_def_unit <- get_template_variables()
+template_variables <- get_template_variables(return_only_names = TRUE)
+```
