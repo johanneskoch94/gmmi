@@ -1,18 +1,13 @@
-check_submission_file <- function(file, verbose = FALSE) {
-  is_xlsx <- grepl("\\.xlsx$", file)
-  if (!is_xlsx) {
-    rlang::abort(glue::glue("\"{file}\" is not an xlsx file."))
-  }
-
-  sheets <- readxl::excel_sheets(file)
-  if (verbose) {
-    cli::cli_alert_success("The file \"{file}\" is the correct file type: \"xlsx\"")
-    cli::cli_alert_success(
-      "It has {length(sheets)} sheets: {glue::glue_collapse(glue::double_quote(sheets), ', ', last = ' and ')}."
-    )
-  }
-}
-
+#' Read in data from GMMI submissions
+#'
+#' Read in data from one or multiple GMMI submissions.
+#'
+#' @param file Path or vector of file paths.
+#' @param verbose If TRUE (FALSE by default), print information to screen.
+#' @param save_log If TRUE (FALSE by default), redirect output to "read_submission.log"
+#'
+#' @return data-frame with submission data
+#' @export
 read_submission <- function(file, verbose = FALSE, save_log = FALSE) {
   if (save_log) {
     file.create("read_submission.log")
@@ -189,4 +184,19 @@ read_submission <- function(file, verbose = FALSE, save_log = FALSE) {
   if (verbose) cli::cli_text(" ")
 
   y
+}
+
+check_submission_file <- function(file, verbose = FALSE) {
+  is_xlsx <- grepl("\\.xlsx$", file)
+  if (!is_xlsx) {
+    rlang::abort(glue::glue("\"{file}\" is not an xlsx file."))
+  }
+
+  sheets <- readxl::excel_sheets(file)
+  if (verbose) {
+    cli::cli_alert_success("The file \"{file}\" is the correct file type: \"xlsx\"")
+    cli::cli_alert_success(
+      "It has {length(sheets)} sheets: {glue::glue_collapse(glue::double_quote(sheets), ', ', last = ' and ')}."
+    )
+  }
 }
