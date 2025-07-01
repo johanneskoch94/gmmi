@@ -4,7 +4,10 @@
 \alias{read_template}
 \title{Read-in and tidy the reporting template.}
 \usage{
-read_template()
+read_template(sheet = "Baseline template")
+}
+\arguments{
+\item{sheet}{Name or number of sheet to read in.}
 }
 \value{
 Tidy data-frame with the reporting template
