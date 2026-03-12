@@ -38,7 +38,16 @@
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">read_submission</span><span class="op">(</span><span class="va">file</span>, verbose <span class="op">=</span> <span class="cn">FALSE</span>, save_log <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">read_submission</span><span class="op">(</span></span>
+<span>  <span class="va">file</span>,</span>
+<span>  model_alias_mapping <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  harmonize_regions <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  harmonize_scenarios <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  verbose <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  only_template_var <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  var_match_strict <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  save_log <span class="op">=</span> <span class="cn">FALSE</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -49,8 +58,31 @@
 <dd><p>Path or vector of file paths.</p></dd>
 
 
+<dt id="arg-model-alias-mapping">model_alias_mapping<a class="anchor" aria-label="anchor" href="#arg-model-alias-mapping"></a></dt>
+<dd><p>If a valid file path (NULL by default), use model aliases contained in the file instead
+of model names.</p></dd>
+
+
+<dt id="arg-harmonize-regions">harmonize_regions<a class="anchor" aria-label="anchor" href="#arg-harmonize-regions"></a></dt>
+<dd><p>IF TRUE (default), rename regions to iso3c codes and drop unknown (keeping only countries
+and certain aggregates (GLO, EU27).</p></dd>
+
+
+<dt id="arg-harmonize-scenarios">harmonize_scenarios<a class="anchor" aria-label="anchor" href="#arg-harmonize-scenarios"></a></dt>
+<dd><p>IF TRUE (default), rename scenarios to conform to template.</p></dd>
+
+
 <dt id="arg-verbose">verbose<a class="anchor" aria-label="anchor" href="#arg-verbose"></a></dt>
 <dd><p>If TRUE (FALSE by default), print information to screen.</p></dd>
+
+
+<dt id="arg-only-template-var">only_template_var<a class="anchor" aria-label="anchor" href="#arg-only-template-var"></a></dt>
+<dd><p>IF TRUE (default), keep only template variables</p></dd>
+
+
+<dt id="arg-var-match-strict">var_match_strict<a class="anchor" aria-label="anchor" href="#arg-var-match-strict"></a></dt>
+<dd><p>IF TRUE (default), variable have to match in their name, unit and definition fields, to that
+of the template's.</p></dd>
 
 
 <dt id="arg-save-log">save_log<a class="anchor" aria-label="anchor" href="#arg-save-log"></a></dt>
