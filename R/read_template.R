@@ -44,3 +44,11 @@ get_template_scenarios <- function() {
   c(unique(read_template()$Scenario),
     unique(read_template(sheet = "Emission reduction template")$Scenario))
 }
+
+get_model_alias <- function(mapping, model = NULL) {
+  x <- readr::read_csv(mapping, col_types = "cc", progress = FALSE)
+  if (!is.null(model)) {
+    x <- dplyr::filter(x, .data$Model == model)$Alias
+  }
+  x
+}

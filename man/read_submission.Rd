@@ -4,12 +4,34 @@
 \alias{read_submission}
 \title{Read in data from GMMI submissions}
 \usage{
-read_submission(file, verbose = FALSE, save_log = FALSE)
+read_submission(
+  file,
+  model_alias_mapping = NULL,
+  harmonize_regions = TRUE,
+  harmonize_scenarios = TRUE,
+  verbose = FALSE,
+  only_template_var = TRUE,
+  var_match_strict = TRUE,
+  save_log = FALSE
+)
 }
 \arguments{
 \item{file}{Path or vector of file paths.}
 
+\item{model_alias_mapping}{If a valid file path (NULL by default), use model aliases contained in the file instead
+of model names.}
+
+\item{harmonize_regions}{IF TRUE (default), rename regions to iso3c codes and drop unknown (keeping only countries
+and certain aggregates (GLO, EU27).}
+
+\item{harmonize_scenarios}{IF TRUE (default), rename scenarios to conform to template.}
+
 \item{verbose}{If TRUE (FALSE by default), print information to screen.}
+
+\item{only_template_var}{IF TRUE (default), keep only template variables}
+
+\item{var_match_strict}{IF TRUE (default), variable have to match in their name, unit and definition fields, to that
+of the template's.}
 
 \item{save_log}{If TRUE (FALSE by default), redirect output to "read_submission.log"}
 }
